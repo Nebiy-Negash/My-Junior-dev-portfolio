@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Philosopher:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.logo{
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+
+li, a{
+    font-family: "Montserrat" ,sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+header{
+    background-color: #383961;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover{
+    color: #0088a9
+}
+
+/* end of nav */
+
+main{
+    min-height: 80vh;
+    background-color:#4b244a ;
+}
+
+section{
+    
+    display: grid;
+    place-items: center;
+    align-content: center;
+}
+
+.intro{
+    font-family: "Fira sans", sans-serif;
+    color: whitesmoke;
+}
+
+.greeting{
+    color: whitesmoke;
+    font-family: "Philosopher" ;
+    font-size: 1.5rem;
+}
+.name-top{
+    font-family: "Fira sans";
+    font-size: 2.5rem;
+}
+
+.jwd{
+    font-family: "Fira sans";
+}
+
+/* end main */
+
+footer{
+    background-color: #25171a;
+}
+
