@@ -1,88 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Philosopher:wght@700&display=swap');
+:root {
+    --typewriterSpeed:6s;
+}
 
-*{
-    box-sizing: border-box;
+body{
     margin: 0;
-    padding: 0;
+    background: #FAF9F6;
 }
 
 
-.logo{
-    height: 80px;
-    width: 80px;
-    cursor: pointer;
-}
 
 
-li, a{
-    font-family: "Montserrat" ,sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
+.container_header{
+    width: 80%;
+    margin: 0 auto;
 }
 
 header{
-    background-color: #383961;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
+    background: #b3af9c;
+    height: 80px;
 }
 
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
 
-.nav-links{
+.logo{
+    float: left;
+    margin: 20px 0;
+    padding:10px ;
+    font-family: 'Rampart One', cursive;
+    cursor: pointer;
+
+}
+
+span{
+    position: absolute;
+    transform: translate(-20%,-20%);
+    /* font-family: 'Poppins',sans-serif; */
+    font-size: 20px;
+    color: #e0e5eb;
+    text-shadow: 
+    -8px -8px 12px rgba(255,255,255,0.3),
+    8px 8px 12px rgba(0,0,0,0.08);
+    caret-color:#262626;
+    outline: none;
+}
+
+nav{
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
-.nav-links li{
+nav li {
     display: inline-block;
-    padding: 0px 20px;
+    margin-left: 50px;
+    padding-top: 23px;
+
+    position: relative;
 }
 
-.nav-links li a{
-    transition: all 0.3s ease 0s;
+nav a {
+    color: #444;
+    font-family: 'Work Sans' sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
 }
 
-.nav-links li a:hover{
-    color: #0088a9
+nav a:hover {
+    color: #000;
 }
 
-/* end of nav */
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #444;
 
-main{
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 200ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+.container{
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
     min-height: 80vh;
-    background-color:#4b244a ;
-}
-
-section{
-    
     display: grid;
-    place-items: center;
-    align-content: center;
+    place-content: center;
+    text-align: center;
+
 }
 
-.intro{
-    font-family: "Fira sans", sans-serif;
-    color: whitesmoke;
+h1{
+    font-size: clamp(2.5rem, 4vw, 5rem);
+    font-family: "Source Code Pro", monospace;
+    position: relative;
+    width: max-content;
 }
 
-.greeting{
-    color: whitesmoke;
-    font-family: "Philosopher" ;
-    font-size: 1.5rem;
-}
-.name-top{
-    font-family: "Fira sans";
-    font-size: 2.5rem;
-}
-
-.jwd{
-    font-family: "Fira sans";
+h1::before,
+h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-/* end main */
-
-footer{
-    background-color: #25171a;
+h1::before {
+    background: #FAF9F6;
+    animation: 
+        typewriter var(--typewriterSpeed) steps(31) 1s forwards;
 }
 
+h1::after {
+    width: 0.125em;
+    background: black;
+    animation: 
+        typewriter var(--typewriterSpeed) steps(31) forwards 1s ,
+        blink 750ms steps(31) infinite;
+}
+
+.subtitle {
+    color: hsl(0 0% 0% / 0.7);
+    font-size: 2rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1.5s) forwards; 
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
