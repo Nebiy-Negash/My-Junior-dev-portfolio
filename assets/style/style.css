@@ -43,6 +43,24 @@ a:hover, a:focus, a:active {
     color: #20753e;
 }
 
+.img-profile {
+    height: 10rem;
+    width: 10rem;
+
+}
+@media(max-width: 490px) {
+    .img-profile {
+        height: 4rem;
+        width: 4rem;
+    }
+}
+@media(max-width: 991px) {
+    .img-profile {
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
 .subheading {
     text-transform: uppercase;
     font-weight: 500;
@@ -122,9 +140,10 @@ a:hover, a:focus, a:active {
 }
 
 
+
+
 section.resume-section {
     border-bottom: 1px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
     padding-top: 5rem !important;
     padding-bottom: 5rem !important;
 }
@@ -138,6 +157,7 @@ section.resume-section {
 
 @media(min-width: 992px) {
     section.resume-section {
+        border-bottom: 1px solid #dee2e6;
         padding-top: 3rem !important;
         padding-bottom: 3rem !important;
     }
